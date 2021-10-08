@@ -40,13 +40,18 @@ def main():
 
 
 def gen_progression():
-    step = random.randrange(1, 15)
-    start_number = random.randrange(90, 250)
+    min_step_size = 1
+    max_step_size  = 15 
+    min_results_in_array = 6
+    max_range_value = 250
+    min_range_value = max_step_size * min_results_in_array 
+    step = random.randrange(min_step_size,max_step_size)
+    start_number = random.randrange(min_range_value, max_range_value)
 
     tmp_array = []
     for i in range(0, start_number, step):
         tmp_array.append(i)
-
+    #return last 8 results 
     return tmp_array[-8:]
 
 
