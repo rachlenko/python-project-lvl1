@@ -4,7 +4,10 @@ import random
 import sys
 
 
-def run(username):
+def main():
+    print("Welcome to the Brain Games!")
+    print("May I have your name?") 
+    username  = sys.stdin.readline().strip()
     print("What number is missing in this progression?")
     # initialization
     questions_round = 3
@@ -72,6 +75,4 @@ def summary(correct_answers, questions_round, username):
 
 
 if "__main__" == __name__:
-    print("May I have your name?") 
-    user_answer = sys.stdin.readline().strip()
-    run(username)
+    main()
