@@ -28,9 +28,7 @@ def main():
         user_answer = prompt.string(f"Question: {str_progression}\n") 
         print(f"Your answer: {user_answer}")
 
-        if check_answer(user_answer, generated_answer, username):
-            correct_answers += 1
-
+        check_answer(user_answer, generated_answer, username):
         round_number += 1
 
     return summary(correct_answers, questions_round, username)
@@ -63,7 +61,7 @@ def check_answer(user_answer, generated_answer, username):
                 Correct answer was {generated_answer}. """
         )
         print(f"Let's try again, {username}!")
-        return False
+        sys.os.exit()
 
 
 def summary(correct_answers, questions_round, username):
