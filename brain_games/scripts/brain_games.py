@@ -6,7 +6,7 @@ import sys
 
 def main():
     print("Welcome to the Brain Games!")
-    username  = prompt.string("May I have your name \n")
+    username  = prompt.string("May I have your name")
     print("What number is missing in this progression?")
     # initialization
     questions_round = 3
@@ -25,7 +25,7 @@ def main():
                 str_progression = f"{str_progression} {i}"
             count_decor += 1
 
-        user_answer = prompt.string(f"Question:{str_progression}\n") 
+        user_answer = prompt.string(f"Question:{str_progression} ") 
         print(f"your answer is {user_answer}")
 
         if not check_answer(user_answer, generated_answer, username):
@@ -59,8 +59,7 @@ def check_answer(user_answer, generated_answer, username):
         return True
     else:
         print(
-            f""" '{user_answer}' is wrong answer;
-                Correct answer was {generated_answer}. """
+            f"""'{user_answer}' is wrong answer; Correct answer was {generated_answer}."""
         )
         print(f"Let's try again, {username}!")
         return False
