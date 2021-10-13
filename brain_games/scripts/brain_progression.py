@@ -2,6 +2,7 @@
 
 import random
 import prompt
+import sys 
 
 def main():
     print("Welcome to the Brain Games!")
