@@ -19,10 +19,10 @@ def main():
         str_progression = ""
         for i in gen_progression():
             if count_decor == 2:
-                str_progression = f"{str_progression} .. "
+                str_progression = f"{str_progression} .."
                 generated_answer = i
             else:
-                str_progression = f"{str_progression} {i} "
+                str_progression = f"{str_progression} {i}"
             count_decor += 1
 
         user_answer = prompt.string(f"Question: {str_progression}\n") 
