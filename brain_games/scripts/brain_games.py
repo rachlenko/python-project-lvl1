@@ -2,12 +2,11 @@
 
 import random
 import sys
-
+import prompt
 
 def main():
     print("Welcome to the Brain Games!")
-    print("May I have your name?") 
-    username  = sys.stdin.readline().strip()
+    username  = prompt.string("May I have your name \n")
     print("What number is missing in this progression?")
     # initialization
     questions_round = 3
@@ -26,9 +25,8 @@ def main():
             else:
                 str_progression = f"{str_progression} {i} "
             count_decor += 1
-        print(f"Question: {str_progression}")
 
-        user_answer = sys.stdin.readline().strip()
+        user_answer = prompt.string(f"Question: {str_progression}\n") 
         print(f"your answer is {user_answer}")
 
         if check_answer(user_answer, generated_answer, username):
