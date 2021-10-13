@@ -2,6 +2,7 @@
 
 import random
 import prompt
+import sys 
 
 def main():
     print("Welcome to the Brain Games!")
@@ -9,7 +10,6 @@ def main():
     print("What number is missing in this progression?")
     # initialization
     questions_round = 3
-    correct_answers = 0
     round_number = 0
 
     # rounds loop
@@ -28,8 +28,8 @@ def main():
         user_answer = prompt.string(f"Question: {str_progression}\n") 
         print(f"your answer is {user_answer}")
 
-        if check_answer(user_answer, generated_answer, username):
-            correct_answers += 1
+        if not check_answer(user_answer, generated_answer, username):
+            sys.os.exit()
 
         round_number += 1
 
