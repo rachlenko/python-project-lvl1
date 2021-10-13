@@ -25,7 +25,7 @@ def main():
                 str_progression = f"{str_progression} {i}"
             count_decor += 1
 
-        user_answer = prompt.string(f"Question: {str_progression}\n") 
+        user_answer = prompt.string(f"Question:{str_progression}\n") 
         print(f"your answer is {user_answer}")
 
         if not check_answer(user_answer, generated_answer, username):
