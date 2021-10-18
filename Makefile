@@ -18,4 +18,6 @@ poetry-dep:
 	echo "check if poetry installed "
 	echo "activate virtualev with poetry"
 
+lint:
+	 poetry run flake8 --ignore=E501 brain_games
 phony: brain-games

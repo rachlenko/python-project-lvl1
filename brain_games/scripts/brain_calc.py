@@ -3,7 +3,8 @@
 import prompt
 import random
 import sys
-from  brain_games.scripts import cli
+from brain_games.scripts import cli
+
 
 def main():
     rounds = 3

@@ -2,7 +2,8 @@
 
 import prompt
 import random
-from  brain_games.scripts import cli
+from brain_games.scripts import cli
+
 
 def main():
     rounds = 3
@@ -16,7 +17,7 @@ def main():
         answer = prompt.string(f"Question: {number}\n")
         print(f"Your answer: {answer}")
         check_answer(answer, number)
-    print("Congratulations, Sam!")
+    print(f"Congratulations, {username}!")
 
 
 def check_answer(answer, number):

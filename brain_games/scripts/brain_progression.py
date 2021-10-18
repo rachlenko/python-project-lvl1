@@ -2,12 +2,14 @@
 
 import random
 import prompt
-import sys 
-from  brain_games.scripts import cli
+import sys
+from brain_games.scripts import cli
+
 
 def main():
     username = cli.welcome_user()
     print("What number is missing in this progression?")
+
     # initialization
     questions_round = 3
     correct_answers = 0
@@ -15,7 +17,6 @@ def main():
 
     # rounds loop
     while round_number < questions_round:
-
         count_decor = 0
         str_progression = ""
         for i in gen_progression():
@@ -26,10 +27,10 @@ def main():
                 str_progression = f"{str_progression} {i}"
             count_decor += 1
 
-        user_answer = prompt.string(f"Question: {str_progression}\n") 
+        user_answer = prompt.string(f"Question: {str_progression}\n")
         print(f"Your answer: {user_answer}")
 
-        check_answer(user_answer, generated_answer, username):
+        check_answer(user_answer, generated_answer, username)
         round_number += 1
 
     return summary(correct_answers, questions_round, username)
@@ -37,18 +38,18 @@ def main():
 
 def gen_progression():
     min_step_size = 1
-    max_step_size  = 15 
-    min_results_in_array = 10 
+    max_step_size = 15
+    min_results_in_array = 8
     max_range_value = 250
-    min_range_value = max_step_size * min_results_in_array 
-    step = random.randrange(min_step_size,max_step_size)
+    min_range_value = max_step_size * min_results_in_array
+    step = random.randrange(min_step_size, max_step_size)
     start_number = random.randrange(min_range_value, max_range_value)
 
     tmp_array = []
     for i in range(0, start_number, step):
         tmp_array.append(i)
-    #return last 8 results 
-    return tmp_array[-8:]
+
+    return tmp_array[-min_results_in_array:]
 
 
 def check_answer(user_answer, generated_answer, username):
@@ -58,8 +59,7 @@ def check_answer(user_answer, generated_answer, username):
         return True
     else:
         print(
-            f""" '{user_answer}' is wrong answer ;( 
-                Correct answer was {generated_answer}. """
+            f" '{user_answer}' is wrong answer. Correct answer was {generated_answer}. "
         )
         print(f"Let's try again, {username}!")
         sys.os.exit()

@@ -2,8 +2,9 @@
 
 import random
 import prompt
-import sys 
-from  brain_games.scripts import cli
+import sys
+from brain_games.scripts import cli
+
 
 def main():
     username = cli.welcome_user()
@@ -25,30 +26,30 @@ def main():
                 str_progression = f"{str_progression} {i}"
             count_decor += 1
 
-        user_answer = prompt.string(f"Question:{str_progression} ") 
+        user_answer = prompt.string(f"Question:{str_progression} ")
         print(f"your answer is {user_answer}")
 
         if not check_answer(user_answer, generated_answer, username):
-            sys.os.exit()
+            sys.exit()
 
         round_number += 1
 
-    return summary(correct_answers, questions_round, username)
+    return summary(questions_round, username)
 
 
 def gen_progression():
     min_step_size = 1
-    max_step_size  = 15 
+    max_step_size = 15
     min_results_in_array = 6
     max_range_value = 250
-    min_range_value = max_step_size * min_results_in_array 
-    step = random.randrange(min_step_size,max_step_size)
+    min_range_value = max_step_size * min_results_in_array
+    step = random.randrange(min_step_size, max_step_size)
     start_number = random.randrange(min_range_value, max_range_value)
 
     tmp_array = []
     for i in range(0, start_number, step):
         tmp_array.append(i)
-    #return last 8 results 
+    # return last 8 results
     return tmp_array[-8:]
 
 
@@ -65,14 +66,14 @@ def check_answer(user_answer, generated_answer, username):
         return False
 
 
-def summary(correct_answers, questions_round, username):
-    missed_answers = 0
-    if correct_answers == questions_round:
-        print(f"Congratulations, {username}!")
-    else:
-        missed_answers = questions_round - correct_answers
-        print("\n\nGame over")
-    return (correct_answers, missed_answers)
+def summary(questions_round, username):
+    # missed_answers = 0
+    # if correct_answers == questions_round:
+    #    print(f"Congratulations, {username}!")
+    # else:
+    #    missed_answers = questions_round - correct_answers
+    print("\n\nGame over")
+    # return (correct_answers, missed_answers)
 
 
 if "__main__" == __name__:
