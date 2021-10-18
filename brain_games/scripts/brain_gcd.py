@@ -2,15 +2,13 @@
 
 import prompt
 import random
-
+import cli 
 
 def main():
     rounds = 3
     min_number = 0
     max_number = 100
-    print("Welcome to the Brain Games!")
-    username = prompt.string("May I have your name \n")
-    print(f"Hello {username}!")
+    username = cli.welcome_user()
     print("""Find the greatest common divisor of given numbers.\n""")
 
     for i in range(0, rounds):

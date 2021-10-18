@@ -3,10 +3,10 @@
 import random
 import prompt
 import sys 
+import cli
 
 def main():
-    print("Welcome to the Brain Games!")
-    username  = prompt.string("May I have your name")
+    username = cli.welcome_user()
     print("What number is missing in this progression?")
     # initialization
     questions_round = 3

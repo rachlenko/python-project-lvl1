@@ -3,7 +3,7 @@
 import prompt
 import random
 import sys
-
+import cli
 
 def main():
     rounds = 3
@@ -12,10 +12,7 @@ def main():
     subtraction = 0
     adding = 1
     multiplication = 2
-
-    print("Welcome to the Brain Games!")
-    username = prompt.string("May I have your name \n")
-    print(f"Hello {username}!")
+    username = cli.welcome_user()
     print("""What is the result of the expression? \n""")
 
     for i in range(0, rounds):
