@@ -3,7 +3,7 @@
 import random
 import prompt
 import sys 
-import cli 
+from  brain_games.scripts import cli
 
 def main():
     username = cli.welcome_user()

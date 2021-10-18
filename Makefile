@@ -1,18 +1,18 @@
 
-build
+build:
 	poetry build
 
-publish
+publish:
 	poetry publish --dry-run
 
-package-install 
+package-install: 
 	#python3 -m pip install --user dist/*.whl
 	pip install  dist/*.whl
 
-brain-games 
+brain-games: 
 	poetry run brain-games
 
-poetry-dep
+poetry-dep:
 	echo "check if pip installed"
 	echo "check if virtualenv installed"
 	echo "check if poetry installed "
