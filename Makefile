@@ -12,6 +12,10 @@ package-install:
 brain-games: 
 	poetry run brain-games
 
+brain-even: 
+	poetry run brain-even
+
+
 poetry-dep:
 	echo "check if pip installed"
 	echo "check if virtualenv installed"
