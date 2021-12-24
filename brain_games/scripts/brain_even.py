@@ -17,7 +17,7 @@ def main():
         answer = prompt.string(f"Question: {number}\n")
         print(f"Your answer: {answer}")
         correct_answer = get_correct_answer(number)
-        if correct_anser != answer:
+        if correct_answer != answer:
             print(f"'{answer}' is wrong answer ;( Correct answer was '{correct_answer}'.")
             print(f"Let's try again, {username}!")
             return  
