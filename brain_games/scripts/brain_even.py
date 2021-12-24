@@ -13,7 +13,7 @@ def main():
     print("""Answer "yes" if the number is even, otherwise answer "no".\n""")
 
     for i in range(0, rounds):
-        number = 73 #random.randrange(min_number, max_number)
+        number = random.randrange(min_number, max_number)
         answer = prompt.string(f"Question: {number}\n")
         print(f"Your answer: {answer}")
         correct_anser = get_correct_answer(number)
