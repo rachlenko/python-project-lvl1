@@ -16,7 +16,7 @@ def main():
         number = random.randrange(min_number, max_number)
         answer = prompt.string(f"Question: {number}\n")
         print(f"Your answer: {answer}")
-        correct_anser = get_correct_answer(number)
+        correct_answer = get_correct_answer(number)
         if correct_anser != answer:
             print(f"'{answer}' is wrong answer ;( Correct answer was '{correct_answer}'.")
             print(f"Let's try again, {username}!")
