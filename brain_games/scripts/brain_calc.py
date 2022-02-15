@@ -3,7 +3,11 @@
 import prompt
 import random
 import sys
-from brain_games.scripts import cli
+
+try:
+    from brain_games.scripts import cli
+except:
+    import cli
 
 
 def main():
@@ -48,7 +52,7 @@ def check_answer(answer, number, username):
         print("Correct!")
     else:
         print(f""" '{answer}'is wrong answer ;(. Correct answer was {number} """)
-        print("Let's try again, {username}")
+        print(f"Let's try again, {username}")
         sys.exit(1)
 
 
